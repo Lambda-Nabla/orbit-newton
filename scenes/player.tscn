@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbfwkvae3nsa2"]
+[gd_scene load_steps=8 format=3 uid="uid://bbfwkvae3nsa2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_iv82t"]
 [ext_resource type="Texture2D" uid="uid://6vi8nh6aq5xo" path="res://textures/ship3.png" id="2_ts8tt"]
 [ext_resource type="Texture2D" uid="uid://bhjrontocn5xm" path="res://textures/planet_trans.png" id="3_qitpc"]
+[ext_resource type="Texture2D" uid="uid://cwgyo1cwpo2a4" path="res://textures/planet_lesbian.png" id="4_tbqhe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5gy8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcwsc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubfx0"]
 
 [node name="Node2D" type="Node2D"]
 metadata/mass = 0
@@ -48,3 +51,16 @@ shape = SubResource("CircleShape2D_jcwsc")
 [node name="Sprite2D" type="Sprite2D" parent="Planet"]
 position = Vector2(173, 19)
 texture = ExtResource("3_qitpc")
+
+[node name="Planet2" type="RigidBody2D" parent="."]
+position = Vector2(-2458, -1796)
+mass = 2000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet2"]
+scale = Vector2(100, 100)
+shape = SubResource("CircleShape2D_ubfx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet2"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_tbqhe")
