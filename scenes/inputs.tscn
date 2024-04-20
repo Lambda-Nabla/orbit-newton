@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://boh88wsgrof5b"]
+
+[ext_resource type="Script" path="res://scripts/inputWire.gd" id="1_m4mr6"]
+[ext_resource type="Texture2D" uid="uid://g5842xqirjuq" path="res://textures/640px-Circle_-_black_simple.svg.png" id="2_2n8rc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gccxe"]
+radius = 28.2843
+
+[node name="Inputs" type="Area2D"]
+position = Vector2(170, 82)
+script = ExtResource("1_m4mr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gccxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2n8rc")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
