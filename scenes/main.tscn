@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciotmco8c65lc"]
+[gd_scene load_steps=11 format=3 uid="uid://8qdevl3xqvql"]
 
 [ext_resource type="PackedScene" uid="uid://bbfwkvae3nsa2" path="res://scenes/player.tscn" id="1_jmqdr"]
 [ext_resource type="Texture2D" uid="uid://drrx44o3ryp8g" path="res://textures/red_dwarf.png" id="2_ki6hp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhjrontocn5xm" path="res://textures/planet_trans.png" id="5_dambu"]
 [ext_resource type="Texture2D" uid="uid://ysek375o7lii" path="res://textures/planet_earf.png" id="6_4tdw4"]
 [ext_resource type="Texture2D" uid="uid://cxmx7v8nul3rq" path="res://textures/planet_moon.png" id="7_wqxwc"]
+[ext_resource type="Script" path="res://scenes/pointToPlanet.gd" id="8_k7dsp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfh2h"]
 
@@ -92,3 +93,6 @@ shape = SubResource("CircleShape2D_yc3hn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Planet5"]
 texture = ExtResource("7_wqxwc")
+
+[node name="Line2D" type="Line2D" parent="."]
+script = ExtResource("8_k7dsp")

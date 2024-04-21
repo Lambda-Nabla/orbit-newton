@@ -17,12 +17,12 @@ var objects
 var planets = []
 
 func get_nearest_body():
-	var shortestDistance = 100000.0
+	var shortestDistance = Vector2(10000.0,10000.0)
 	for body in planets:
-		var distance: float = self.position.distance_to(body.position)
-		if distance < shortestDistance:
-			shortestDistance = distance
-			
+		if body.collision_layer != 2:
+			var distance = self.position - body.position
+			if distance.length() < shortestDistance.length():
+				shortestDistance = distance
 	return shortestDistance
 	
 func _ready():
