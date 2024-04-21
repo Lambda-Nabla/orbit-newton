@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ciotmco8c65lc"]
+[gd_scene load_steps=14 format=3 uid="uid://8qdevl3xqvql"]
 
 [ext_resource type="PackedScene" uid="uid://bbfwkvae3nsa2" path="res://scenes/player.tscn" id="1_jmqdr"]
 [ext_resource type="Texture2D" uid="uid://drrx44o3ryp8g" path="res://textures/red_dwarf.png" id="2_ki6hp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmx7v8nul3rq" path="res://textures/planet_moon.png" id="7_wqxwc"]
 [ext_resource type="Script" path="res://scenes/pointToPlanet.gd" id="8_k7dsp"]
 [ext_resource type="Texture2D" uid="uid://6xny2yfxwwdf" path="res://textures/Asteroid1.png" id="8_ppexo"]
+[ext_resource type="Texture2D" uid="uid://dt7q8xry417af" path="res://textures/starsky.webp" id="10_2xhfs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfh2h"]
 
@@ -307,3 +308,11 @@ shape = SubResource("CapsuleShape2D_k5etg")
 [node name="Sprite2D" type="Sprite2D" parent="Asteroid14"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_ppexo")
+
+[node name="Starsky" type="Sprite2D" parent="."]
+z_index = -3
+texture_repeat = 2
+position = Vector2(539, 100)
+texture = ExtResource("10_2xhfs")
+region_enabled = true
+region_rect = Rect2(0, 0, 500000, 500000)
