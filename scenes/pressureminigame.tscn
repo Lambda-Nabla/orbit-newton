@@ -36,3 +36,19 @@ texture = ExtResource("2_88pxl")
 position = Vector2(499, 284)
 scale = Vector2(1, -0.076)
 zoom = Vector2(1.155, 1.155)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 344.0
+offset_top = 13.0
+offset_right = 384.0
+offset_bottom = 53.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(2.3738, 2.63981)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pump the handle!"

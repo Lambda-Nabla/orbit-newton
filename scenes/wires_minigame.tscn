@@ -60,7 +60,8 @@ texture = ExtResource("5_dd8wn")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 287.0
+offset_right = 327.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
