@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgkk0sh20sk3x"]
+[gd_scene load_steps=5 format=3 uid="uid://dgkk0sh20sk3x"]
 
-[ext_resource type="Script" path="res://scenes/pump.gd" id="1_l5ovf"]
+[ext_resource type="Script" path="res://scripts/pump.gd" id="1_l5ovf"]
+[ext_resource type="Texture2D" uid="uid://bcgujxecj5pgg" path="res://textures/pixil-frame-0.png" id="2_88pxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1eyx"]
 size = Vector2(18.0198, 20)
@@ -16,7 +17,6 @@ scale = Vector2(17.3143, 1.75)
 script = ExtResource("1_l5ovf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pump"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_e1eyx")
 
 [node name="handle" type="Sprite2D" parent="pump"]
@@ -26,3 +26,13 @@ texture = SubResource("PlaceholderTexture2D_xhctg")
 position = Vector2(0, 60)
 scale = Vector2(0.1, 5)
 texture = SubResource("PlaceholderTexture2D_xhctg")
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(499, 300)
+texture = ExtResource("2_88pxl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(499, 284)
+scale = Vector2(1, -0.076)
+zoom = Vector2(1.155, 1.155)

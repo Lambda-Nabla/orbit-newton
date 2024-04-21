@@ -1,41 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://jmkfwhfgssgj"]
+[gd_scene load_steps=6 format=3 uid="uid://jmkfwhfgssgj"]
 
 [ext_resource type="Script" path="res://scripts/Wires.gd" id="1_eyc0o"]
 [ext_resource type="PackedScene" uid="uid://boh88wsgrof5b" path="res://scenes/inputs.tscn" id="2_yfhn5"]
 [ext_resource type="PackedScene" uid="uid://d1ehfalj8ney2" path="res://scenes/outputs.tscn" id="3_0ly4k"]
+[ext_resource type="Texture2D" uid="uid://bcgujxecj5pgg" path="res://textures/pixil-frame-0.png" id="4_f8e3r"]
+[ext_resource type="Texture2D" uid="uid://1aqa6ya0mfkm" path="res://textures/pixil-frame-0(3).png" id="5_dd8wn"]
 
 [node name="Wires Minigame" type="Node2D"]
 script = ExtResource("1_eyc0o")
 
 [node name="Inputs" parent="." instance=ExtResource("2_yfhn5")]
-position = Vector2(644, 87)
+position = Vector2(809, 111)
 
 [node name="Inputs2" parent="." instance=ExtResource("2_yfhn5")]
-position = Vector2(276, 84)
+position = Vector2(455, 111)
 color = 1
 
 [node name="Inputs3" parent="." instance=ExtResource("2_yfhn5")]
-position = Vector2(121, 89)
+position = Vector2(550, 111)
 color = 2
 
 [node name="Inputs4" parent="." instance=ExtResource("2_yfhn5")]
-position = Vector2(505, 84)
+position = Vector2(694, 111)
 color = 3
 
 [node name="Outputs" parent="." instance=ExtResource("3_0ly4k")]
-position = Vector2(171, 353)
+position = Vector2(455, 465)
 
 [node name="Outputs2" parent="." instance=ExtResource("3_0ly4k")]
-position = Vector2(256, 351)
+position = Vector2(572, 465)
 index = 1
 color = 1
 
 [node name="Outputs3" parent="." instance=ExtResource("3_0ly4k")]
-position = Vector2(343, 353)
+position = Vector2(691, 465)
 index = 2
 color = 2
 
 [node name="Outputs4" parent="." instance=ExtResource("3_0ly4k")]
-position = Vector2(450, 351)
+position = Vector2(809, 465)
 index = 3
 color = 3
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(499, 300)
+texture = ExtResource("4_f8e3r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(499, 284)
+scale = Vector2(1, -0.076)
+zoom = Vector2(1.155, 1.155)
+
+[node name="Pixil-frame-0(3)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(637, 311)
+texture = ExtResource("5_dd8wn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(2.3738, 2.63981)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Connect the wires!!"

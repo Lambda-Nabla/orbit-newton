@@ -3,7 +3,7 @@ extends RigidBody2D
 var speed = 5
 var velocity := Vector2.ZERO
 var rotation_direction = 0
-var rotation_speed = 50
+var rotation_speed = 75
 var health = 3
 var playerGravity = 0
 
@@ -15,18 +15,19 @@ var objects
 var planets = []
 
 func get_nearest_body():
-	var shortestDistance = Vector2(100000, 100000)
+	var shortestDistance = 100000.0
 	for body in planets:
-		var distance: Vector2 = body.position - self.position
+		var distance: float = self.position.distance_to(body.position)
 		if distance < shortestDistance:
 			shortestDistance = distance
+			
 	return shortestDistance
 	
 func _ready():
 	root  = get_tree().get_root().get_children()
 	objects = root[0].get_children()
 	for object in objects:
-		if object is RigidBody2D:
+		if object is RigidBody2D and object != self:
 			planets.append(object)
 
 func calculate_gravity_force(target, bodies) -> Vector2:
