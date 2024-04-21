@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b38assm0ensdg"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_1ulgw"]
+
+[node name="ControlHud" type="CanvasLayer"]
+script = ExtResource("1_1ulgw")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_direction = 2
+offset_right = 1111.0
+offset_bottom = 617.0
+
+[node name="Health" type="Label" parent="Grid"]
+layout_mode = 2
+
+[node name="Velocity" type="Label" parent="Grid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Gravity" type="Label" parent="Grid"]
+layout_mode = 2
+
+[node name="DistNearestBody" type="Label" parent="Grid"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(9.28, 3.12)
+color = Color(0, 0, 0, 0.392157)

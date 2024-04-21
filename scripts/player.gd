@@ -7,8 +7,11 @@ var rotation_speed = 50
 var health = 3
 var playerGravity = 0
 
-var root = get_tree().get_root().get_children()
-var objects = root[0].get_children()
+var redSpeed = 15
+var orangeSpeed = 5
+
+var root
+var objects
 var planets = []
 
 func get_nearest_body():
@@ -20,6 +23,8 @@ func get_nearest_body():
 	return shortestDistance
 	
 func _ready():
+	root  = get_tree().get_root().get_children()
+	objects = root[0].get_children()
 	for object in objects:
 		if object is RigidBody2D:
 			planets.append(object)
@@ -40,9 +45,9 @@ func hurtPlayer(damage):
 	print("Hurt player for ", damage)
 
 func checkDamage():
-	if abs(velocity.x) > 25 or abs(velocity.y) > 25:
+	if abs(velocity.x) > redSpeed or abs(velocity.y) > redSpeed:
 		hurtPlayer(3)
-	elif abs(velocity.x) > 5 or abs(velocity.y) > 5:
+	elif abs(velocity.x) > orangeSpeed or abs(velocity.y) > orangeSpeed:
 		hurtPlayer(1)
 	
 func _physics_process(delta):
