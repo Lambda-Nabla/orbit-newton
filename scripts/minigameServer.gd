@@ -17,4 +17,4 @@ func serve_minigame():
 
 func reload_main_scene():
 	score += 1
-	get_tree().change_scene_to_file("res://scenes/player.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
