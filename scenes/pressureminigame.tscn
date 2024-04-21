@@ -1,13 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://kqtyp7b7ovv7"]
+[gd_scene load_steps=6 format=3 uid="uid://kqtyp7b7ovv7"]
 
 [ext_resource type="Script" path="res://scripts/pump.gd" id="1_l5ovf"]
-[ext_resource type="Texture2D" uid="uid://bcgujxecj5pgg" path="res://textures/pixil-frame-0.png" id="2_88pxl"]
+[ext_resource type="Texture2D" uid="uid://bcgujxecj5pgg" path="res://textures/pumphandle.png" id="2_88pxl"]
+[ext_resource type="Texture2D" uid="uid://o8vfrsy44s2u" path="res://textures/shipback.webp" id="2_o5kob"]
+[ext_resource type="Texture2D" uid="uid://gq2rgofs01th" path="res://textures/pumpbottom.png" id="4_d7afi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1eyx"]
 size = Vector2(18.0198, 20)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xhctg"]
-size = Vector2(18, 20)
 
 [node name="Pressureminigame" type="Node2D"]
 
@@ -20,17 +19,14 @@ script = ExtResource("1_l5ovf")
 shape = SubResource("RectangleShape2D_e1eyx")
 
 [node name="handle" type="Sprite2D" parent="pump"]
-texture = SubResource("PlaceholderTexture2D_xhctg")
-
-[node name="stick" type="Sprite2D" parent="pump"]
-position = Vector2(0, 60)
-scale = Vector2(0.1, 5)
-texture = SubResource("PlaceholderTexture2D_xhctg")
+position = Vector2(-0.288779, 80)
+scale = Vector2(0.05, 0.5)
+texture = ExtResource("2_88pxl")
 
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(499, 300)
-texture = ExtResource("2_88pxl")
+texture = ExtResource("2_o5kob")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(499, 284)
@@ -47,8 +43,15 @@ offset_bottom = 53.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(2.3738, 2.63981)
+offset_left = -146.0
+offset_top = -1.0
+offset_right = 414.0
+offset_bottom = 52.0
+scale = Vector2(1.079, 1.19992)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Pump the handle!"
+theme_override_font_sizes/font_size = 38
+text = "Click on the handle and pump!"
+
+[node name="Pumpbottom" type="Sprite2D" parent="."]
+position = Vector2(516, 349)
+texture = ExtResource("4_d7afi")
