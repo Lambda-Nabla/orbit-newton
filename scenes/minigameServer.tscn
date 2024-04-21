@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bocl1lo38mj4c"]
+
+[ext_resource type="Script" path="res://scripts/minigameServer.gd" id="1_qodcr"]
+
+[node name="minigameServer" type="Node"]
+script = ExtResource("1_qodcr")
