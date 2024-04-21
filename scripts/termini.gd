@@ -1,5 +1,7 @@
 extends Control
 
+var minigameServer
+
 var copyText
 var rng = RandomNumberGenerator.new()
 
@@ -19,6 +21,7 @@ func _ready():
 	label = get_node("VSplitContainer/Label")
 	lineNode.grab_focus()
 	label.text = copyText
+	minigameServer = get_node("/root/MinigameServer")
 	
 	pass # Replace with function body.
 
@@ -27,5 +30,5 @@ func _ready():
 func _process(delta):
 	playerText = lineNode.text
 	if playerText == copyText:
-		print("you win!")
+		minigameServer.reload_main_scene()
 	pass

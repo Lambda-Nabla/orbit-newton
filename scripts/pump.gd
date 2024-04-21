@@ -1,5 +1,7 @@
 extends Area2D
 
+var minigameServer
+
 var startY = 250
 var endY = startY - 100
 
@@ -10,8 +12,7 @@ var numberOfPumps = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position.y = startY-(endY/2)
-	pass # Replace with function body.
-
+	minigameServer = get_node("/root/MinigameServer")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,5 +32,5 @@ func _process(delta):
 		
 		
 	if numberOfPumps > 3:
-		print("you win!")
+		minigameServer.reload_main_scene()
 	pass

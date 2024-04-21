@@ -1,5 +1,7 @@
 extends Node2D
 
+var minigameServer
+
 enum colors {green,blue,red,yellow}
 var selectedColor
 var completed = [false,false,false,false]
@@ -9,12 +11,11 @@ var wire1pos = Vector2.ZERO
 var wire2pos = Vector2.ZERO
 
 func _ready():
-	
-	pass
+	minigameServer = get_node("/root/MinigameServer")
 
 func _process(delta):
 	if victory == true:
-		print("you win!")
+		minigameServer.reload_main_scene()
 	else:
 		var temp = true
 		for c in completed:
