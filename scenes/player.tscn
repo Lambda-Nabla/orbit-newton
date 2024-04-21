@@ -18,6 +18,7 @@ metadata/mass = 0
 
 [node name="Planet" type="RigidBody2D" parent="."]
 position = Vector2(161, 1)
+collision_layer = 2
 mass = 1000.0
 gravity_scale = 0.0
 max_contacts_reported = 1
@@ -34,6 +35,7 @@ texture = ExtResource("3_qitpc")
 
 [node name="Planet2" type="RigidBody2D" parent="."]
 position = Vector2(-2458, -1796)
+collision_layer = 2
 mass = 2000.0
 gravity_scale = 0.0
 
@@ -72,7 +74,7 @@ zoom = Vector2(0.44, 0.44)
 [node name="Back" type="Sprite2D" parent="."]
 z_index = -2
 texture_repeat = 2
-position = Vector2(137, -14)
+position = Vector2(765, 150)
 texture = ExtResource("6_75mr0")
 region_enabled = true
 region_rect = Rect2(2, 2, 30000, 20000)
