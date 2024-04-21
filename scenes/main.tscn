@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://ciotmco8c65lc"]
+
+[ext_resource type="PackedScene" uid="uid://bbfwkvae3nsa2" path="res://scenes/player.tscn" id="1_jmqdr"]
+[ext_resource type="Texture2D" uid="uid://drrx44o3ryp8g" path="res://textures/red_dwarf.png" id="2_ki6hp"]
+[ext_resource type="Texture2D" uid="uid://c62vga06myxvs" path="res://textures/planet_destroyed.png" id="3_ghmmo"]
+[ext_resource type="Texture2D" uid="uid://cwgyo1cwpo2a4" path="res://textures/planet_lesbian.png" id="4_sw6va"]
+[ext_resource type="Texture2D" uid="uid://bhjrontocn5xm" path="res://textures/planet_trans.png" id="5_dambu"]
+[ext_resource type="Texture2D" uid="uid://ysek375o7lii" path="res://textures/planet_earf.png" id="6_4tdw4"]
+[ext_resource type="Texture2D" uid="uid://cxmx7v8nul3rq" path="res://textures/planet_moon.png" id="7_wqxwc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfh2h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc3hn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_jmqdr")]
+position = Vector2(5124, 8187)
+
+[node name="Sun" type="RigidBody2D" parent="."]
+position = Vector2(516, 114)
+scale = Vector2(2, 2)
+collision_layer = 2
+mass = 10000.0
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Sun"]
+texture = ExtResource("2_ki6hp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sun"]
+scale = Vector2(60, 60)
+shape = SubResource("CircleShape2D_lfh2h")
+
+[node name="Planet" type="RigidBody2D" parent="."]
+position = Vector2(-5164, -2474)
+scale = Vector2(0.5, 0.5)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_yc3hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet"]
+texture = ExtResource("3_ghmmo")
+
+[node name="Planet2" type="RigidBody2D" parent="."]
+position = Vector2(7006, 8420)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet2"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_yc3hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet2"]
+texture = ExtResource("4_sw6va")
+
+[node name="Planet3" type="RigidBody2D" parent="."]
+position = Vector2(-6374, 5523)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet3"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_yc3hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet3"]
+texture = ExtResource("5_dambu")
+
+[node name="Planet4" type="RigidBody2D" parent="."]
+position = Vector2(9226, -4923)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet4"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_yc3hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet4"]
+texture = ExtResource("6_4tdw4")
+
+[node name="Planet5" type="RigidBody2D" parent="."]
+position = Vector2(7678, -5403)
+scale = Vector2(0.5, 0.5)
+mass = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet5"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_yc3hn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet5"]
+texture = ExtResource("7_wqxwc")
