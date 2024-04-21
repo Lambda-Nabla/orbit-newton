@@ -16,7 +16,7 @@ var root
 var objects
 var planets = []
 
-var startingPositions = [Vector2(1000, 1000), Vector2(-5000, -6000), Vector2(5000, 6000), Vector2(-2000, -2000)]
+var startingPositions = [Vector2(2000, 2000), Vector2(-5000, -6000), Vector2(5000, 6000), Vector2(-2000, -2000)]
 
 func get_nearest_body():
 	var shortestDistance = Vector2(10000.0,10000.0)
@@ -50,7 +50,7 @@ func calculate_gravity_force(target, bodies) -> Vector2:
 	return gravity
 
 func hurtPlayer(damage):
-	health -= damage
+	minigameServer.playerHealth -= damage
 	print("Hurt player for ", damage)
 
 func checkDamage():
@@ -79,6 +79,7 @@ func _physics_process(delta):
 				hurtPlayer(3)
 			if b.collision_layer == 1:
 				checkDamage()
-				if velocity.length() > 0:
-					minigameServer.serve_minigame()
-				velocity -= velocity
+				if (minigameServer.playerHealth > 0): 
+					if velocity.length() > 0:
+						minigameServer.serve_minigame()
+					velocity -= velocity

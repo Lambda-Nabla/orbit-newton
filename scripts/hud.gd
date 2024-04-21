@@ -48,15 +48,17 @@ func _process(delta):
 		
 	if minigameServer.score >= 3:
 		$"You win!".show()
+		$Grid.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	if health <= 0:
+	if minigameServer.playerHealth <= 0:
 		$Death.show()
+		$Grid.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _getPlayerVars():
 	if player != null:
-		health = player.health
+		health = minigameServer.playerHealth
 		orangeSpeed = player.orangeSpeed
 		redSpeed = player.redSpeed
 		velocity = player.velocity
@@ -65,4 +67,9 @@ func _getPlayerVars():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	$"You win!".hide()
+	$Death.hide()
+	$Grid.show()
 	minigameServer.score = 0
+	minigameServer.playerHealth = 3
+	

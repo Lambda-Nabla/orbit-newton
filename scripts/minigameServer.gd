@@ -3,6 +3,7 @@ extends Node
 var minigames = []
 var tree: SceneTree
 var score 
+var playerHealth
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 	minigames.append("res://scenes/terminal minigame.tscn")
 	minigames.append("res://scenes/pressureminigame.tscn")
 	score = 0
+	playerHealth = 3
 
 func serve_minigame():
 	var minigame = minigames.pick_random()
