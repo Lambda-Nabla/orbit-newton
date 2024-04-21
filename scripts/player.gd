@@ -73,7 +73,8 @@ func _physics_process(delta):
 		for b in body:
 			if b.collision_layer == 2:
 				hurtPlayer(3)
-		checkDamage()
-		if velocity.length() > 0:
-			minigameServer.serve_minigame()
-		velocity -= velocity
+			if b.collision_layer == 1:
+				checkDamage()
+				if velocity.length() > 0:
+					minigameServer.serve_minigame()
+				velocity -= velocity
