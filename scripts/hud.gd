@@ -24,7 +24,6 @@ func _ready():
 	lNearestBody = get_node("Grid/DistNearestBody")
 	
 	player = get_node("/root/Node2D/Player")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,8 +40,14 @@ func _process(delta):
 		lVelocity.set("theme_override_colors/font_color", Color(1,.5,0))
 	else:
 		lVelocity.set("theme_override_colors/font_color", Color(0,1,0))
-	
-	pass
+		
+	if get_node("/root/MinigameServer").score == 3:
+		$"You win!".show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+	if health <= 0:
+		$Death.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _getPlayerVars():
 	if player != null:
@@ -52,4 +57,3 @@ func _getPlayerVars():
 		velocity = player.velocity
 		gravity = player.playerGravity
 		nearest = player.get_nearest_body()
-	pass
