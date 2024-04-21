@@ -11,7 +11,7 @@ func _ready():
 
 func serve_minigame():
 	var minigame = minigames.pick_random()
-	tree.change_scene_to_file(minigame)
+	get_tree().change_scene_to_file(minigame)
 
 func reload_main_scene():
-	tree.change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
