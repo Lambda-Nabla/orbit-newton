@@ -16,6 +16,8 @@ var root
 var objects
 var planets = []
 
+var startingPositions = [Vector2(1000, 1000), Vector2(-5000, -6000), Vector2(5000, 6000), Vector2(-2000, -2000)]
+
 func get_nearest_body():
 	var shortestDistance = Vector2(10000.0,10000.0)
 	for body in planets:
@@ -31,6 +33,8 @@ func _ready():
 	for object in objects:
 		if object is RigidBody2D and object != self:
 			planets.append(object)
+			
+	self.position = startingPositions.pick_random()
 	
 	minigameServer = get_node("/root/MinigameServer")
 
