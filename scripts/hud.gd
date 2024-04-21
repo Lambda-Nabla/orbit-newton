@@ -38,7 +38,7 @@ func _process(delta):
 	lVelocity.text = str("Velocity: ", velocity)
 	lGravity.text = str("Gravity: ", gravity)
 	lNearestBody.text = str("Distance to nearest body: ", nearest)
-	lScore.text = str("Score: ", minigameServer.score)
+	lScore.text = str("Score: ", 3 - minigameServer.playerHealth)
 	if abs(velocity.x) > redSpeed or abs(velocity.y) > redSpeed:
 		lVelocity.set("theme_override_colors/font_color", Color(1,0,0))
 	elif abs(velocity.x) > orangeSpeed or abs(velocity.y) > orangeSpeed:
