@@ -81,6 +81,7 @@ theme_override_font_sizes/font_size = 40
 text = "Restart"
 
 [node name="score" type="Label" parent="You win!"]
+layout_mode = 0
 offset_left = 208.0
 offset_top = 213.0
 offset_right = 1245.0
