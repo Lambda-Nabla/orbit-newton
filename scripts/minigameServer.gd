@@ -7,8 +7,8 @@ var score
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	minigames.append("res://scenes/wires_minigame.tscn")
-	minigames.append("res://scenes/terminal minigame.tscn")
-	minigames.append("res://scenes/pressureminigame.tscn")
+	#minigames.append("res://scenes/terminal minigame.tscn")
+	#minigames.append("res://scenes/pressureminigame.tscn")
 	score = 0
 
 func serve_minigame():

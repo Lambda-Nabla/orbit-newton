@@ -6,7 +6,7 @@ var copyText
 var rng = RandomNumberGenerator.new()
 
 var texts = ["calculate_gravity(velocity)", "flush_toilets(toilet0)", "fix_that_dang_bug(245)", 
-"eat_good_fish(swordfish)"]
+"eat_good_fish(swordfish)", "collect_planet_data()", "broadcast_signal_km(10000)"]
 
 var lineNode
 var label
@@ -15,7 +15,7 @@ var playerText
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var temp = rng.randf_range(0, 3)
+	var temp = rng.randi_range(0, 5)
 	copyText = texts[temp]
 	lineNode = get_node("VSplitContainer/LineEdit")
 	label = get_node("VSplitContainer/Label")

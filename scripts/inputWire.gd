@@ -5,7 +5,9 @@ enum colors {green,blue,red,yellow}
 var mainScript
 
 func _ready():
+	
 	mainScript = get_node("../")
+	mainScript._assignColorInput()
 	match color:
 		colors.green:
 			get_node("Sprite2D").modulate = Color(0,1,0)

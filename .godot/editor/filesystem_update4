@@ -1,0 +1,7 @@
+res://scenes/player.tscn
+res://scripts/termini.gd
+res://scenes/wires_minigame.tscn
+res://scenes/minigameServer.tscn
+res://scripts/inputWire.gd
+res://scripts/Wires.gd
+res://scripts/minigameServer.gd
