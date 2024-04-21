@@ -7,6 +7,23 @@ var rotation_speed = 50
 var health = 3
 var playerGravity = 0
 
+var root = get_tree().get_root().get_children()
+var objects = root[0].get_children()
+var planets = []
+
+func get_nearest_body():
+	var shortestDistance = Vector2(100000, 100000)
+	for body in planets:
+		var distance: Vector2 = body.position - self.position
+		if distance < shortestDistance:
+			shortestDistance = distance
+	return shortestDistance
+	
+func _ready():
+	for object in objects:
+		if object is RigidBody2D:
+			planets.append(object)
+
 func calculate_gravity_force(target, bodies) -> Vector2:
 	var sum := Vector2.ZERO
 	for body in bodies:
@@ -36,12 +53,7 @@ func _physics_process(delta):
 	var rotation = rotation_direction * rotation_speed * delta
 	set_angular_velocity(rotation)
 	
-	var root = get_tree().get_root().get_children()
-	var objects = root[0].get_children()
-	var planets = []
-	for object in objects:
-		if object is RigidBody2D:
-			planets.append(object)
+
 	velocity += calculate_gravity_force(self, planets)
 
 	var collision = move_and_collide(velocity)
