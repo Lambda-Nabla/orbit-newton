@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbfwkvae3nsa2"]
+[gd_scene load_steps=10 format=3 uid="uid://bbfwkvae3nsa2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_iv82t"]
 [ext_resource type="Texture2D" uid="uid://6vi8nh6aq5xo" path="res://textures/ship3.png" id="2_ts8tt"]
 [ext_resource type="Texture2D" uid="uid://bhjrontocn5xm" path="res://textures/planet_trans.png" id="3_qitpc"]
 [ext_resource type="Texture2D" uid="uid://cwgyo1cwpo2a4" path="res://textures/planet_lesbian.png" id="4_tbqhe"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://b38assm0ensdg" path="res://scenes/hud.tscn" id="5_waboo"]
+[ext_resource type="Texture2D" uid="uid://gq2rgofs01th" path="res://textures/pixil-frame-0(1).png" id="6_dnsd5"]
+=======
 [ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="5_waboo"]
+>>>>>>> 5d74d7b2ce1d21ea9688eeb80fe1820ee2f2c832
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcwsc"]
 
@@ -67,3 +72,11 @@ position = Vector2(400, 2)
 zoom = Vector2(0.44, 0.44)
 
 [node name="ControlHud" parent="." instance=ExtResource("5_waboo")]
+
+[node name="Back" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+position = Vector2(137, -14)
+texture = ExtResource("6_dnsd5")
+region_enabled = true
+region_rect = Rect2(2, 2, 30000, 20000)
