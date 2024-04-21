@@ -11,3 +11,9 @@ Visit 3 different planets and beat their minigames without destroying the ship t
 WASD to move- WS will move forward and backward, while AD will steer the ship.
 
 Minigames will prompt you with their controls when they are activated!
+
+Connect the wires: Click and Drag the top colored buttons to their matching color on the bottom!
+
+Command Prompt: Type the given command.
+
+Pump the handle: Click and Drag the handle to pump it!
