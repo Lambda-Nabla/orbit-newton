@@ -29,3 +29,64 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(9.28, 3.12)
 color = Color(0, 0, 0, 0.392157)
+
+[node name="Death" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="youdied" type="Label" parent="Death"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 125.0
+offset_right = 1097.0
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 100
+text = "You crashed and died"
+
+[node name="Button" type="Button" parent="Death"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 262.0
+offset_right = 816.0
+offset_bottom = 339.0
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="You win!" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="youwin" type="Label" parent="You win!"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 125.0
+offset_right = 1155.0
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 100
+text = "mission successful"
+
+[node name="Button" type="Button" parent="You win!"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 320.0
+offset_right = 816.0
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="score" type="Label" parent="You win!"]
+offset_left = 208.0
+offset_top = 213.0
+offset_right = 1245.0
+offset_bottom = 350.0
+theme_override_font_sizes/font_size = 85
+text = "score:"
+
+[connection signal="pressed" from="Death/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="You win!/Button" to="." method="_on_button_pressed"]
