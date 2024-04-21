@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var minigameServer
+
 var speed = 5
 var velocity := Vector2.ZERO
 var rotation_direction = 0
@@ -25,10 +27,12 @@ func get_nearest_body():
 	
 func _ready():
 	root  = get_tree().get_root().get_children()
-	objects = root[0].get_children()
+	objects = root[1].get_children()
 	for object in objects:
 		if object is RigidBody2D and object != self:
 			planets.append(object)
+	
+	minigameServer = get_node("/root/MinigameServer")
 
 func calculate_gravity_force(target, bodies) -> Vector2:
 	var sum := Vector2.ZERO
@@ -66,7 +70,6 @@ func _physics_process(delta):
 
 	if(get_colliding_bodies()):
 		checkDamage()
+		if velocity.length() > 0:
+			minigameServer.serve_minigame()
 		velocity -= velocity
-
-
-	print(velocity)
