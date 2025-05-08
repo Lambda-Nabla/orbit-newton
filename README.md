@@ -1,5 +1,8 @@
 # Orbit-newton
 
+itch.io link to play in browser
+https://lambdanabla.itch.io/orbit-newton
+
 ## About
 
 Orbit-newton is a 2D physics-based space navigation game developed in 24 hours for the 2024 KHE hackathon. The game objective is to navigate your spaceship through the stars to safely land on different planets, complete mini games to collect their data!
